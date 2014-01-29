@@ -1,0 +1,19 @@
+{
+  "RSpec": {
+    "coverage": {
+      "/Users/rosannehoyem/Development/code/code-challenges/guest-book/app/models/message.rb": [
+        1,
+        1,
+        1,
+        null
+      ],
+      "/Users/rosannehoyem/Development/code/code-challenges/guest-book/app/models/user.rb": [
+        1,
+        1,
+        1,
+        null
+      ]
+    },
+    "timestamp": 1391028387
+  }
+}

@@ -45,6 +45,7 @@ end
 # gem 'debugger', group: [:development, :test]
 
 group :test, :development do
+  gem "faker"
   gem "rspec-rails"
   gem "capybara"
   gem "selenium-webdriver"

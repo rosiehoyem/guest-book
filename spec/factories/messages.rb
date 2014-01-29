@@ -2,7 +2,7 @@
 
 FactoryGirl.define do
   factory :message do
-    content "MyString"
+    content "This is a fantastic idea!"
     user nil
   end
 end
