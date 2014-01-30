@@ -1,13 +1,13 @@
-class UsersController < ApplicationController
+class MessagesController < ApplicationController
 
 	def new
-  	@user = User.new
+  	@message = Message.new
   end
 
 	def create
-    @user = User.new(user_params)
+    @message = Message.new(message_params)
     respond_to do |format|
-      if @user.save   
+      if @message.save   
       	flash[:notice] = "Thanks for stopping by!"     
         format.html { redirect_to root_path } 
         format.js
@@ -15,13 +15,17 @@ class UsersController < ApplicationController
       else
       	flash[:notice] = "I'm sorry. We couldn't save your message."
         format.html { render action: 'main#root' }
-        format.json { render json: @user.errors, status: :unprocessable_entity }
+        format.json { render json: @message.errors, status: :unprocessable_entity }
       end
     end
   end
 
   private
-  def user_params
-    params.require(:user).permit(:name, :location, message_attributes: [:content])
+  def message_params
+    params.require(:message).permit(:name, :location, message_attributes: [:content])
+  end
+
+  def set_user
+    @user = curent_user
   end
 end
