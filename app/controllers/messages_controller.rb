@@ -1,4 +1,5 @@
 class MessagesController < ApplicationController
+  before_filter :authorize, only: [:new, :create, :edit, :update]
 
 	def new
   	@message = Message.new
@@ -22,7 +23,7 @@ class MessagesController < ApplicationController
 
   private
   def message_params
-    params.require(:message).permit(:name, :location, message_attributes: [:content])
+    params.require(:message).permit(:content, user_attributes: [:name, :location, :email, :password, :password_confirmation,])
   end
 
   def set_user

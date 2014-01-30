@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Twilio Textr</title>
+  <title>Guest Book</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
@@ -23,17 +23,21 @@
 	    	</ul>
         <ul class="nav navbar-nav navbar-right">
           <li><%= link_to "Home", root_path %></li>
+            <% if current_user %>
+          <li><%= link_to "Logged in as" + current_user.email, edit_user_path %></li>
+          <li><%= link_to "Log Out", logout_path %></li>
+          <% else %>
+            <li><%= link_to "Sign Up", signup_path %></li>
+            <li><%= link_to "Log In", login_path %></li>
+          <% end %>
         </ul>
 
       </div>
     </div>
   </div>
+
   <div class="container">
 
-	  <div class="jumbotron">
-	    <h1>Thanks for visiting!</h1>
-	    <p class="lead">Feel free to leave a message</p>
-	  </div>
 
 					<%= yield %>
 

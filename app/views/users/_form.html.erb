@@ -1,0 +1,35 @@
+      <%= form_for @user, html: {class: "form-horizontal"} do |f| %>
+        <% if @user.errors.any? %>
+          <div class="error_messages">
+            <h2>Form is invalid</h2>
+            <ul>
+              <% @user.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+              <% end %>
+            </ul>
+          </div>
+        <% end %>
+        <div class="form-group">
+          <%= f.label :name, class: "control-label" %><br />
+          <%= f.text_field :name, class: "form-control", id: "focusedInput content", placeholder: "Name" %>
+        </div>
+        <div class="form-group">
+          <%= f.label :location, class: "control-label" %><br />
+          <%= f.text_field :location, class: "form-control", id: "focusedInput content", placeholder: "Location" %>
+        </div>
+        <div class="form-group">
+          <%= f.label :email, class: "control-label" %><br />
+          <%= f.text_field :email, class: "form-control", id: "focusedInput content", placeholder: "Email" %>
+        </div>
+        <div class="form-group">
+          <%= f.label :password, class: "control-label" %><br />
+          <%= f.password_field :password, class: "form-control", placeholder: "Password" %>
+        </div>
+        <div class="form-group">
+          <%= f.label :password_confirmation, class: "control-label" %><br />
+          <%= f.password_field :password_confirmation, class: "form-control", placeholder: "Password Confirmation" %>
+        </div>
+        <div class="form-group">
+          <div class="actions"><%= f.submit "Sign Up", class: "btn btn-primary" %></div>
+        </div>
+      <% end %>
