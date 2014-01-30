@@ -1,19 +1,21 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/rosannehoyem/Development/code/code-challenges/guest-book/app/models/message.rb": [
+      "/Users/rosannehoyem/Development/code/code-challenges/guest-book/app/controllers/main_controller.rb": [
         1,
         1,
-        1,
+        null,
+        null,
         null
       ],
-      "/Users/rosannehoyem/Development/code/code-challenges/guest-book/app/models/user.rb": [
+      "/Users/rosannehoyem/Development/code/code-challenges/guest-book/app/controllers/application_controller.rb": [
         1,
-        1,
+        null,
+        null,
         1,
         null
       ]
     },
-    "timestamp": 1391028387
+    "timestamp": 1391053473
   }
 }
