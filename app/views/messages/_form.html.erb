@@ -1,21 +1,18 @@
-			<%= form_for @user, html: {class: "form-horizontal"} do |f| %>
-			<div class="form-group">	
-				<%=f.label :name, class: "control-label"	%>
-				<%= f.text_field :name, class: "form-control", id: "focusedInput content", placeholder: "Name" %>
-			</div>
-			<div class="form-group">	
-				<%=f.label :location, class: "control-label"	%>	
-				<%= f.text_field :location, class: "form-control", placeholder: "Location" %>
-			</div>
-			<div class="form-group">	
-				<%= f.fields_for :message do |ff| %>
-					<%= ff.label :content, class: "control-label"	%>
-					<%= ff.text_area :content, class: "form-control", rows: "3", placeholder: "Leave a message here!" %>
-  			<% end %>	
-		  </div>
-			<div class="form-group">
-				<div class="pull-right">
-				<%= f.submit 'Submit', class: "btn btn-primary", remote: true %>
-				</div>
-			</div>
-			<% end %>
+ <%= form_for @message, html: {class: "form-horizontal"} do |f| %>   
+        
+      <div class="form-group">  
+        <div class="controls"> 
+        <h4>Message:</h4> 
+        <%= f.text_area :content, placeholder: "Leave a message here.", value: @message.content, class: "form-control", rows: "3", width: "100%" %>
+        </div>  
+      </div>
+     
+        <%= f.hidden_field :user_id, :value => current_user.id %>
+
+      <div class="form-group">  
+        <div class="pull-right">
+        <%= f.submit "submit", class: "btn btn-primary" %>
+        </div>
+      </div>       
+  
+  <% end %>

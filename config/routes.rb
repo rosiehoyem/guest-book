@@ -7,7 +7,7 @@ GuestBook::Application.routes.draw do
  
   root "main#index"
   
-  resources :users, :sessions
+  resources :users, :sessions, :messages
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

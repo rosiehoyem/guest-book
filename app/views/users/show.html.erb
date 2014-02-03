@@ -2,13 +2,17 @@
   <div class="col-md-2"></div>
     <div class="col-md-8">
       <h1><%= @user.name %></h1>
-      <p><%= @user.location %></p>
-      <p><%= @user.email %></p>
-      <p><%= render(@user.message) %></p>
+      <p>Location: <%= @user.location %></p>
+      <p>Email: <%= @user.email %></p>
+      <p><% if @user.messages %>
+      	<%=render(@user.messages) %>
+      	<% else %>
+      	<p>You haven't left messages in anyone's Guest Book.</p>
+      	<% end %></p>
       </div>
     </div>
   <div class="col-md-2"></div>
 </div>
 <% if @user.id == current_user.id %> 
-<p> <%= link_to 'Edit', edit_user_path(@user) %> | <%= link_to 'Delete', destroy_user_path(@user) %> </p>
+<p> <%= link_to 'Edit', edit_user_path(@user) %></p>
 <% end %> 

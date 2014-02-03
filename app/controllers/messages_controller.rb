@@ -1,12 +1,13 @@
 class MessagesController < ApplicationController
   before_filter :authorize, only: [:new, :create, :edit, :update]
+  before_action :set_user, only: [:show, :edit, :update, :destroy]
 
 	def new
-  	@message = Message.new
+  	@message = current_user.messages.build
   end
 
 	def create
-    @message = Message.new(message_params)
+    @message = current_user.messages.build(message_params)
     respond_to do |format|
       if @message.save   
       	flash[:notice] = "Thanks for stopping by!"     
@@ -27,6 +28,6 @@ class MessagesController < ApplicationController
   end
 
   def set_user
-    @user = curent_user
+    @user = current_user
   end
 end

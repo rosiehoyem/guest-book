@@ -1,16 +1,19 @@
-<div class="jumbotron">
-  <h1>Thanks for visiting!</h1>
-  <p class="lead">Feel free to leave a message</p>
-</div>
+<div class="page-header" id="banner">
+  <div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+      <h1>Guest Book</h1>
+      <p class="lead">You were here. You were awesome.</p>
 
-<div class="row">
-  <div class="col-md-2"></div>
-  	<div class="col-md-8">
-  	<h2>Leave a message.</h2>
-  	<%= render "messages/new" %>
-  	<hr>
-  	<h2>Past visitors:</h2>
-      <%= render(@messages) %>
+    	<% if current_user.present? %>
+    		<h2>Leave a message.</h2>
+    		<%= render "messages/new" %>
+    	<%else%>
+    		<h4><%= link_to "Log In", login_path %> or <%= link_to "Sign Up", signup_path %> to leave a message.</h4>
+    	<%end%>
+    	<hr>
+    	<h2>Past visitors:</h2>
+        <%= render(@messages) %>
 		</div>
   <div class="col-md-2"></div>
 </div>
