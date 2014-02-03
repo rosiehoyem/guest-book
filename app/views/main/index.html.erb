@@ -13,7 +13,11 @@
     	<%end%>
     	<hr>
     	<h2>Past visitors:</h2>
+      <% if @messages %>
         <%= render(@messages) %>
+      <% else %>
+        <p>Be the first to leave a message.</p>
+      <%end%>
 		</div>
   <div class="col-md-2"></div>
 </div>
