@@ -1,6 +1,5 @@
 class MessagesController < ApplicationController
   before_filter :authorize, only: [:new, :create, :edit, :update]
-  before_action :set_user, only: [:show, :edit, :update, :destroy]
 
 	def new
   	@message = current_user.messages.build
@@ -27,7 +26,4 @@ class MessagesController < ApplicationController
     params.require(:message).permit(:content, user_attributes: [:name, :location, :email, :password, :password_confirmation,])
   end
 
-  def set_user
-    @user = current_user
-  end
 end
