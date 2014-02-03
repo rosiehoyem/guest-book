@@ -13,3 +13,19 @@ user1.save
 user2 = User.create(name: 'John Doe', location: 'Chicago', email: 'john@email.com', password: 'password', password_confirmation: 'password')
 user2.messages.build(content: 'What! This is crap. Start over.')
 user2.save
+
+user3 = User.create(name: 'Julia Guilia', location: 'Bemidji', email: 'julia@email.com', password: 'password', password_confirmation: 'password')
+user3.messages.build(content: 'You are killing it!')
+user3.save
+
+user4 = User.create(name: 'Madonna', location: 'Ohio', email: 'madonna@email.com', password: 'password', password_confirmation: 'password')
+user4.messages.build(content: 'I love this! What will be next?')
+user4.save
+
+user5 = User.create(name: 'Rob Lowe', location: 'St. Paul', email: 'rob@email.com', password: 'password', password_confirmation: 'password')
+user5.messages.build(content: 'Seriously. I do not know what to say.')
+user5.save
+
+user6 = User.create(name: 'Kenny Rogers', location: 'Madison', email: 'kenny@email.com', password: 'password', password_confirmation: 'password')
+user6.messages.build(content: 'What! This is crap. Start over.')
+user6.save
