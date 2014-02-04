@@ -2,14 +2,14 @@
   <div class="row">
     <div class="col-md-2"></div>
     <div class="col-md-8">
-      <h1>Guest Book</h1>
-      <p class="lead">You were here. You were awesome.</p>
-
+      <h1 class="text-center">Meet Frankie</h1>
+      <%= image_tag("cat.gif", size: "300x300", class: "center-block") %>
+      <hr>
     	<% if current_user.present? %>
-    		<h2>Leave a message.</h2>
+    		<h3>You're here. That's awesome. Leave Frankie a message.</h3>
     		<%= render "messages/new" %>
     	<%else%>
-    		<h4><%= link_to "Log In", login_path %> or <%= link_to "Sign Up", signup_path %> to leave a message.</h4>
+    		<h3><%= link_to "Log In", login_path %> or <%= link_to "Sign Up", signup_path %> to leave Frankie a message.</h3>
     	<%end%>
     	<hr>
     	<h2>Past visitors:</h2>

@@ -2,13 +2,13 @@
   <div class="form-group">  
     <div class="controls"> 
     <%=f.label :content, class: "control-label"%>
-    <%= f.text_area :content, placeholder: "Leave a message here.", value: @message.content, class: "form-control", rows: "3" %>
+    <%= f.text_area :content, placeholder: "Frankie loves messages. Leave one here.", value: @message.content, class: "form-control", rows: "3" %>
     </div>  
   </div>
     <%= f.hidden_field :user_id, :value => current_user.id %>
   <div class="form-group">  
     <div class="pull-right">
-    <%= f.submit "submit", class: "btn btn-primary" %>
+    <%= f.submit "Submit", class: "btn btn-primary" %>
     </div>
   </div>       
 <% end %>

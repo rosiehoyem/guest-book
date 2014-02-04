@@ -7,7 +7,6 @@ gem 'rails', '4.0.1'
 # Use sqlite3 as the database for Active Record
 group :development do
   gem 'sqlite3', '1.3.8'
-  gem "rack_session_access"
 end
 
 # Use SCSS for stylesheets
@@ -56,6 +55,7 @@ group :production do
 end
 
 group :test, :development do
+  gem "rack_session_access"
   gem "faker"
   gem "rspec-rails"
   gem "capybara"
